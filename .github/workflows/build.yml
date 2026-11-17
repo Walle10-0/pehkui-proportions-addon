@@ -33,5 +33,4 @@ jobs:
       - name: Upload Gradle Build Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: gradle-build
           path: build/libs/*.jar
