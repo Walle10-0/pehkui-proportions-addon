@@ -28,3 +28,10 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build
+
+      # I can't be bothered to keep uploading the build
+      - name: Upload Gradle Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: gradle-build
+          path: build/libs/*.jar
