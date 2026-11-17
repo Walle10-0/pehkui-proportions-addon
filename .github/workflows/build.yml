@@ -30,7 +30,18 @@ jobs:
         run: ./gradlew build
 
       # I can't be bothered to keep uploading the build
+      # get the filename
+      - name: Get JAR Filename
+        id: jar
+        shell: bash
+        run: |
+          file=(build/libs/*.jar)
+          echo "name=$(basename "${file[0]}")" >> "$GITHUB_OUTPUT"
+
+      # upload the thing
       - name: Upload Gradle Build Artifacts
         uses: actions/upload-artifact@v4
         with:
+          name: ${{ steps.jar.outputs.name }}
           path: build/libs/*.jar
+          overwrite: true
