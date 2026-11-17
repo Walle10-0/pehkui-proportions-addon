@@ -4,6 +4,7 @@ import net.minecraft.resources.ResourceLocation;
 
 import virtuoel.pehkui.api.ScaleModifier;
 import virtuoel.pehkui.api.ScaleRegistries;
+import virtuoel.pehkui.api.ScaleTypes;
 //import virtuoel.pehkui.api.ScaleTypes;
 import virtuoel.pehkui.api.TypedScaleModifier;
 
@@ -35,7 +36,10 @@ public class PehkuiScaleModifiers {
 		)
 	);
 
-    public static void init() {}
+    public static void init() {
+		ScaleTypes.HITBOX_HEIGHT.getDefaultBaseValueModifiers().add(EFFECTIVE_HEIGHT);
+		ScaleTypes.EYE_HEIGHT.getDefaultBaseValueModifiers().add(EFFECTIVE_HEIGHT);
+	}
 
     private static ScaleModifier registerMyModifier(String name, ScaleModifier scaleModifier)
 	{

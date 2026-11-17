@@ -29,6 +29,7 @@ public class pehkuiproportions {
         modEventBus.addListener(this::commonSetup);
 
         PehkuiScaleTypes.init();
+        PehkuiScaleModifiers.init();
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (pehkuiproportions) to respond directly to events.
