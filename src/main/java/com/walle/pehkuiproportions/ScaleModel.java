@@ -36,6 +36,7 @@ public class ScaleModel {
         float legOffsetY = model.leftLeg.y * (1-legY);
         float legOffsetX = legSizeX * legX;
 
+        applyScale(model.hat, headScale);
         applyScale(model.head, headScale);
 
         applyScale(model.body, bodyX, bodyY, bodyZ);
@@ -46,7 +47,7 @@ public class ScaleModel {
         applyScale(model.rightLeg, legX, legY, legZ);
         applyScale(model.leftLeg, legX, legY, legZ);
 
-        model.hat.y += bodyOffset + legOffsetY; // so for some reason hat scales with head but doesn't move :/
+        model.hat.y += bodyOffset + legOffsetY;
         model.head.y += bodyOffset + legOffsetY;
         model.body.y += bodyOffset + legOffsetY;
         model.leftArm.y += bodyOffset + legOffsetY;
